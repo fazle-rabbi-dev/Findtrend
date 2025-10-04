@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+	font-family: "Good Dog";
+	src: url("../assets/fonts/good-dog.TTF") format("truetype-variations");
+}
+@font-face {
+	font-family: "Effra";
+	src: url("../assets/fonts/effra.ttf") format("truetype-variations");
+}
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+	--color-primary: #a8ff35;
+	--color-primary-dark: #87d322;
+	--color-gray: #8b8b8b;
+	--color-gray-light: #adadad;
+	--color-black-warm: #181818;
+	--color-black-deep: #030303;
+	--color-white-soft: #f5f5f5;
+	--color-white-sharp: #fafafa;
+
+	--font-effra: "Effra", sans-serif;
+	--font-good-dog: "Good Dog", cursive;
+	--font-inter: "Inter", sans-serif;
+	--font-roboto: "Roboto", sans-serif;
+
+	--text-3xl: 32px;
+	--text-4xl: 36px;
+	--text-5xl: 60px;
+	--text-6xl: 64px;
+	--text-7xl: 72px;
+
+	--radius-16: 16px;
+	--radius-40: 40px;
+
+	--breakpoint-xsm: 480px;
+}
+
+@layer base {
+	html,
+	body,
+	#root {
+		height: 100%;
+		font-family: "Effra", sans-serif;
+	}
+
+	.main-container {
+		@apply max-w-screen-sm lg:max-w-screen-xl mx-auto px-[18px] md:px-[28px] lg:px-[38px] 2xl:px-0;
+	}
+}
+
+/* ============ CUSTOM UTILITIES ============ */
+@utility b2 {
+	@apply border-2 border-teal-400;
+}
+
+@utility b1 {
+	@apply border-2 border-red-400;
+}
+
+@layer components {
+	/* ============ TYPOGRAPHY ============ */
+	.text-link {
+		@apply text-lg leading-none hover:text-primary-dark;
+	}
+
+	.heading-1 {
+		@apply text-4xl lg:text-7xl font-extrabold leading-tight;
+	}
+
+	.text-body {
+		@apply text-sm md:text-lg leading-normal;
+	}
+
+	.annotation {
+		@apply text-base lg:text-lg font-good-dog leading-snug;
+	}
+
+	.heading-2-large {
+		@apply text-4xl lg:text-7xl font-bold leading-tight lg:leading-normal;
+	}
+
+	.heading-2 {
+		@apply text-4xl lg:text-6xl font-extrabold lg:font-bold leading-tight lg:leading-normal;
+	}
+
+	/* ============ COMPONENTS ============ */
+	.btn-base {
+		@apply px-6 py-3 lg:px-8 lg:py-4 text-sm lg:text-lg font-bold leading-snug bg-primary text-black rounded-40;
+	}
+
+	.btn-register {
+		@apply px-[32px] py-[12px] rounded-40 text-lg leading-[100%] text-black bg-white;
+	}
+
+	/* ===== Pricing Section ===== */
+	.billing-cycle {
+		@apply text-lg lg:text-2xl font-inter font-medium;
+	}
+
+	.pricing-card {
+		@apply flex flex-col min-h-[602px] lg:h-auto rounded-16 bg-white-sharp text-black p-[32px];
+	}
+
+	.card-title {
+		@apply text-3xl lg:text-4xl font-medium  leading-[100%];
+	}
+
+	.card-text {
+		@apply text-lg leading-[100%];
+	}
+
+	.card-price {
+		@apply text-5xl lg:text-6xl font-medium leading-[100%];
+	}
+
+	.join-us-title {
+		@apply text-4xl lg:text-7xl font-extrabold leading-tight;
+	}
+
+	/* ============ CUSTOM SWTTCH ============ */
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 104px;
+		height: 45px;
+	}
+
+	/* Hide checkbox */
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	/* Slider track */
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: white;
+		border-radius: 34px;
+		transition: 0.4s;
+	}
+
+	/* The circle */
+	.slider::before {
+		position: absolute;
+		content: "";
+		height: 37px;
+		width: 36px;
+		left: 3px;
+		top: 4px;
+		background-color: var(--color-primary);
+		border-radius: 50%;
+		transition: 0.4s;
+	}
+
+	input:checked + .slider::before {
+		transform: translateX(60px);
+	}
+
+	#hide-scrollbar {
+		scrollbar-width: none;
+	}
+}
