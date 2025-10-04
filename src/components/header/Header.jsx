@@ -24,7 +24,7 @@ const Header = () => {
 	}, [isOpenMenu]);
 
 	return (
-		<header className="bg-black bg-[url('images/ornament-sm.svg')] md:bg-[url('images/ornament-lg.svg')] bg-cover bg-center z-50">
+		<header className="bg-black bg-[url('/images/ornament-sm.svg')] md:bg-[url('/images/ornament-lg.svg')] bg-cover bg-center z-50">
 			{/* ============= WRAPPER ============= */}
 			<section className="relative z-50 min-h-[100px] py-[30px]  text-white ">
 				{/* ============= MAIN CONTAINER ============= */}
