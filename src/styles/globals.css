@@ -3,10 +3,12 @@
 @font-face {
 	font-family: "Good Dog";
 	src: url("../assets/fonts/good-dog.TTF") format("truetype-variations");
+	font-display: swap;
 }
 @font-face {
 	font-family: "Effra";
 	src: url("../assets/fonts/effra.ttf") format("truetype-variations");
+	font-display: swap;
 }
 
 @import "tailwindcss";
